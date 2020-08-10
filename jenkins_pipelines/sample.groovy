@@ -11,25 +11,23 @@ node {
 
         } finally {
             publishHTML (target: [
-                    reportDir: 'target/site/serenity',
+                    reportDir: 'target/reports',
                     reportFiles: 'index.html',
                     reportName: "Smoke tests report"
             ])
         }
     }
 
-//    stage('UI') {
-//        try {
-//            sh "mvn clean verify -Dtags='type:UI'"
-//        } catch (err) {
-//
-//        } finally {
-//            publishHTML (target: [
-//                    reportDir: 'target/site/serenity',
-//                    reportFiles: 'index.html',
-//                    reportName: "Smoke tests report"
-//            ])
-//        }
-    }
+    stage('UI') {
+        try {
+            sh "mvn clean verify -Dtags='type:UI'"
+        } catch (err) {
 
-
+        } finally {
+            publishHTML (target: [
+                    reportDir: 'target/reports',
+                    reportFiles: 'index.html',
+                    reportName: "Smoke tests report"
+            ])
+        }
+    }}
