@@ -11,7 +11,7 @@ node {
 
         } finally {
             publishHTML (target: [
-                    reportDir: 'target/reports',
+                    reportDir: 'target/site/serenity',
                     reportFiles: 'index.html',
                     reportName: "Smoke tests report"
             ])
@@ -25,7 +25,7 @@ node {
 
         } finally {
             publishHTML (target: [
-                    reportDir: 'target/reports',
+                    reportDir: 'target/site/serenity',
                     reportFiles: 'index.html',
                     reportName: "Smoke tests report"
             ])
